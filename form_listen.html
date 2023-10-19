@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表單送出，會渲染</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <Style>
+        .box {
+            height: 50px;
+            width: 50px;
+            display: inline-block;
+        }
+
+        .demo {
+            background-color: aquamarine;
+        }
+
+        .box2 {
+            height: 50px;
+            width: 50px;
+            display: inline-block;
+            background-color: #000;
+        }
+
+        .demo2 {
+            width: 300px;
+            height: 250px;
+            border: 1px solid #000;
+        }
+    </Style>
+</head>
+
+<body>
+    <div class="container ">
+        <form action="">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <h1 align="center">歡樂點餐</h1>
+                <div class="demo position-relative"  id="demo">
+                    <div class="input-group mt-4 ">
+                        <span class="input-group-text" id="basic-addon1">姓名</span>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="請輸入" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="form-text text-danger mb-3" id="error_name">輸入姓名或暱稱(2~10個字)</div>
+                      <!--
+                    <div class="mb-3">
+                        <label for="" class="form-label">姓名(暱稱):</label>
+                        <input type="text" class="form-control" id="name" name="name">
+                        <div class="form-text text-danger" id="error_name">輸入姓名或暱稱(2~10個字)</div>
+                    </div>
+                    -->
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="address" name="address" placeholder="地址">
+                        <label for="floatingInput">地址</label>
+                        <div class="form-text text-danger" id="error_address">必填欄位</div>
+                    </div>
+                    <!--
+                    <div class="mb-3">
+                        <label for="" class="form-label">地址:</label>
+                        <input type="text" class="form-control" id="address" name="address">
+                        <div class="form-text text-danger" id="error_address">必填欄位</div>
+                    
+                    </div>
+                    -->
+                    <div class="mb-3">
+                        <label for="" class="form-label">主餐:</label>
+                        <input type="text" class="form-control" list="foodList" id="mainFood" name="mainFood">
+                        <datalist id="foodList">
+                            <option value="美味華堡">
+                            <option value="美味蟹堡">
+                            <option value="雞腿堡">   
+                            <option value="豬肉滿福堡">
+                            <option value="讓你吃很堡">
+                        </datalist>
+                        <div class="form-text text-danger" id="error_mainFood">餐點都是3~8字</div>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">副餐:</label>
+                
+                        <div class="mb-3 ms-2 form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="sideMeal" name="sideMeal" value="薯條">
+                            <label for="sideMeal" class="form-check-label">薯條</label>
+                            <input type="checkbox" class="form-check-input"id="sideMeal" name="sideMeal" value="地瓜薯條">
+                            <label for="sideMeal" class="form-check-label">地瓜薯條</label>
+                        </div>
+                        <div class="mb-3 ms-5">
+                            <input type="checkbox" class="form-check-input" id="sideMeal" name="sideMeal" value="雞塊">
+                            <label for="" class="form-check-label">雞塊</label>
+                            <input type="checkbox" class="form-check-input" id="sideMeal" name="sideMeal" value="洋蔥圈">
+                            <label for="" class="form-check-label">洋蔥圈</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">飲料:</label>
+                        <select name="drink" id="drink"  class="form-select">
+                            <option value="激浪">激浪</option>
+                            <option value="可樂">可樂</option>
+                            <option value="檸檬紅茶">檸檬紅茶</option>
+                            <option value="美式咖啡">美式咖啡</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">付款方式:</label>
+                        <div class="mb-3">
+                            <input type="radio" class="form-check-input ms-3" id="payType" name="payType" value="現金">
+                            <label for="" class="form-label" >現金</label>
+                            <input type="radio" class="form-check-input ms-3" id="payType" name="payType" value="信用卡">
+                            <label for="" class="form-label" >信用卡</label>
+                            <input type="radio" class="form-check-input ms-3" id="payType" name="payType" value="line pay">
+                            <label for="" class="form-label" >line pay</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label" id="donate_num" name="donate_num">小額捐款:  0</label>
+                        <div class="mb-3">
+                            <input type="range" class="form-range" max="50" min="0" step="10" id="donate" name="donate" value="0">
+                        </div>
+                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">優惠碼(123)</label>
+                        <input type="text" class="form-control" id="discount" name="discount" >
+                        <div class="valid-feedback">正確</div>
+                        <div class="invalid-feedback">無此優惠碼</div>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <input type="button" class="btn btn-primary me-5" id="ok_btn" value="送出">
+                        <input type="button" class="btn btn-primary ms-5" id="cancel_btn" value="取消">
+                    </div>
+                    <div class="mb-3 form-check form-switch position-absolute top-0 end-0">
+                        <input type="checkbox" class="form-check-input " role="switch" id="switch01" name="switch01">
+                        <label for=""class="form-check-label">草原風</label>
+                    </div>
+                 
+                    <div class="form-check">
+                            <input type="checkbox" class="form-check-input " id="check_terms" name="check_terms">
+                            <label for="" class="form-check-label">交易條款</label>
+                            <div class="valid-feedback">同意遵守條款</div>
+                            <div class="invalid-feedback">不同意，請換家</div>
+                    </div>
+                
+                  
+                </div>  
+            </div>
+        </div>
+        </form>
+        <table class="table">
+                <thead>
+                    <tr>
+                        <th>姓名</th>
+                        <th>地址</th>
+                        <th>主餐</th>
+                        <th>副餐</th>
+                        <th>飲料</th>
+                        <th>付款方式</th>
+                        <th>小額捐款</th>
+                        <th>優惠碼</th>
+                    </tr>
+                </thead>
+                <tbody id="showMsg">
+                    
+                        
+                 
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+        
+   
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        $(function(){
+            var flag_name=false;
+            var flag_address=false;
+            var flag_mainFood=false;
+            var flag_discount=false;
+            var flag_terms=false;
+            
+            $("#name").bind("input propertychange",function(){
+                
+                if($(this).val().length>1 && $(this).val().length<11)
+                {
+                    $("#error_name").text("符合規則");
+                    $("#error_name").addClass("text-success");
+                    $("#error_name").removeClass("text-danger");
+                    flag_name=true;
+                }
+                else
+
+                {
+                    $("#error_name").text("輸入姓名或暱稱(2~10個字)");
+                    $("#error_name").addClass("text-danger");
+                    $("#error_name").removeClass("text-success");
+                    flag_name=false;
+                }
+            });
+            $("#address").bind("input propertychange",function(){
+                
+                if($(this).val().length>0)
+                {
+                    $("#error_address").text("符合規則");
+                    $("#error_address").addClass("text-success");
+                    $("#error_address").removeClass("text-danger");
+                    flag_address=true;
+                }
+                else
+
+                {
+                    $("#error_address").text("必填欄位");
+                    $("#error_address").addClass("text-danger");
+                    $("#error_address").removeClass("text-success");
+                    flag_address=false;
+                }
+            });
+            $("#mainFood").bind("input propertychange",function(){
+                
+                if($(this).val().length>=3 && $(this).val().length<=8)
+                {
+                    $("#error_mainFood").text("符合規則");
+                    $("#error_mainFood").addClass("text-success");
+                    $("#error_mainFood").removeClass("text-danger");
+                    flag_mainFood=true;
+                }
+                else
+
+                {
+                    $("#error_mainFood").text("餐點都是3~8個字");
+                    $("#error_mainFood").addClass("text-danger");
+                    $("#error_mainFood").removeClass("text-success");
+                    flag_mainFood=false;
+                }
+            });
+            $("#donate").bind("input propertychange",function(){
+                var num=$(this).val();
+                $("#donate_num").text("小額捐款: "+num);
+            })
+            $("#switch01").change(function(){
+                //console.log($(this).val());
+                if($(this).is(':checked'))
+                {
+                    $("#demo").css("background-color","#FFE2AA");
+                    $("#demo").css("border","5px solid #CA884B");
+                    $(this).next().text("木色風");
+                  
+                }
+                else
+                {
+                    $("#demo").css("background-color","aquamarine");
+                    $("#demo").css("border","5px solid seagreen");
+                    $(this).next().text("草原風");
+                }
+                
+            });
+            $("#discount").change(function(){
+                if($(this).val()=="123")
+                {
+                    $(this).addClass("is-valid");
+                    $(this).removeClass("is-invalid");
+                    flag_discount=true;
+                }
+                else if ($(this).val().length>0)
+                {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    flag_discount=false;
+                }
+                else
+                {
+                    $(this).removeClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    flag_discount=true;
+                }
+            });
+            $("#check_terms").change(function(){
+                if($(this).is(':checked'))
+                {
+                    $(this).addClass("is-valid");
+                    $(this).removeClass("is-invalid");
+                    flag_terms=true;
+                }
+                else
+                {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_terms=false;
+                }
+            });
+            $("#ok_btn").click(function(){
+                
+                var name=$("#name").val();
+                var address=$("#address").val();
+                var mainFood=$("#mainFood").val();
+                var drink=$("#drink").val();
+                var donate=$("#donate").val();;
+                var discount=$("#discount").val();;
+                //sideMeal 副餐
+                var sideMealList=[];
+                $.each($("input[name='sideMeal']:checked"),function(){
+                    sideMealList.push($(this).val());
+                })
+                sideMeal=sideMealList.join("、");
+
+                //付款方式
+                $.each($("input[name='payType']:checked"),function(){
+                    payType=$(this).val();
+                    console.log(payType);
+                })
+                //秀結果
+                if(flag_name&&flag_address&&flag_mainFood&&flag_discount&&flag_terms)
+                {
+                    $('#showMsg').append("<tr><td>"+name+"</td><td>"+address+"</td><td>"+mainFood+"</td><td>"+sideMeal+"</td><td>"+drink+"</td><td>"+payType+"</td><td>"+donate+"</td><td>"+discount+"</td></tr>)")
+                 /*"姓名:"+name+"<br>"+
+                    "地址:"+address+"<br>"+
+                    "主餐:"+mainFood+"<br>"+
+                    "副餐:"+sideMeal+"<br>"+
+                    "飲料:"+drink+"<br>"+
+                    "付款方式:"+payType+"<br>"+
+                    "小額捐款:"+donate+"<br>"+
+                    "優惠碼:"+discount*/
+                }
+                else{
+                    alert("資料有誤")
+                }
+                
+             
+           
+                
+
+                
+
+            });
+
+            
+   
+            
+            
+            
+               
+            
+            
+         });
+    </script>
+</body>
+
+</html>
