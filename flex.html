@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雲端餐廳</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<style>
+       @media screen and (max-width:768px) {
+        .s90_img {
+            right: 0px;
+        }
+
+        .s90_text {
+            background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+            padding: 20px;
+            color: white;
+        }
+    }
+</style>
+ 
+       
+</head>
+
+<body>
+      
+    <!--透過內容，撐開，使背景圖顯示出來-->
+    
+                                 <!--父層設相對-->
+    <section id="s90" class="position-relative ">
+        <div class="row">                      <!--子層設絕對 距頂0 距底0  當有文字內容後背景圖就可以被撐開-->
+            <div class="col-md-5 bg-cover  position-absolute top-0 bottom-0 s90_img"
+                style="background-image: url(img/people7.jpg); z-index: -1;"> 
+                <!---z-index:-1 至於下層，當畫面縮小，文字與圖片重疊時，文字可顯示於上方-->
+            </div>      
+            <div class="row">
+                <div class="container ">
+                    <div class="col-md-7 ms-auto s90_text">
+                        <h2 class="">總經理:Claire Redfield</h2>
+                        <p>生於台灣台中縣清水鎮，台灣企業家，為雲端集團創辦人，現任雲端集團董事長，旗下有雲端牛排、雲端屋、雲端昆布鍋、雲端燒肉、雲端懷石料理、等品牌。
+                            其父戴芳為三勝製帽公司創辦人，台中地方望族，家境良好。
+                        </p>
+                        <p>2001年，創立旗下連鎖餐廳「雲端牛排」</p>
+                        <p>2003年，創立旗下連鎖餐廳「雲端屋」</p>
+                        <p>2005年，創立旗下連鎖餐廳「雲端昆布鍋」</p>
+                        <a href="" class="btn btn-outline-info">查看更多</a>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h2>經營方針</h2>
+                                <p>因顧客而生存，有了顧客，我們才能永續經營，顧客的光臨對我們是莫大的恩惠，顧客有恩於我們，我們也要對他們心存感恩、心懷感謝、善解、寬容看待。
+                                    優質服務源自良好的互動，為顧客多想一點，因為讓我們的恩人感到快樂，恩人就會樂於與我們有「好合作」，最後服務才會有「好結果」，甚至幫我們傳播好的口碑。
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <h2>未來展望</h2>
+                                <p>本公司以「顧客滿足」為發展策略主軸，隨時調整品牌組合與經營規模，汰弱扶強，期許符合消費者需求，追求「穩健經營」及「持續增長」兩大目標，有助整體營運績效之提升。在多品牌策略下，體現出不同的發展進程特性，短、中程目標為持續優化既有品牌、新品牌發展，2023年鎖定火鍋、燒肉品類，推出2-3個新品牌；長程目標為打造全球美食共饗平台，引領美食文化體驗及向上提升的生活態度。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+   <!--透過內容，撐開，使背景圖顯示出來-->
+    <section id="s100">
+
+        <div class="row ">
+            <div class="col-md-6 bg-center bg-cover " style="background-image: url(img/people6.jpg); height: 300px;">
+                <div class="col-md-7 ">
+                    <div class="bg_text text-light ms-2">
+                        <h3>誠徵店經理</h3>
+                        <p>1.招攬顧客、餐點介紹 </p>
+                        <p>2.全方位工作技能-顧客服務及收銀；產品製作及陳列</p>
+                        <p>3.維持門市整潔</p>
+                        <a href="" class="btn btn-warning">加入我們</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6 bg-center bg-cover" style="background-image: url(img/people10.jpg); height: 300px;">
+                <div class="col-md-7">
+                    <div class="bg_text text-light">
+                        <h3>誠徵廚師</h3>
+                        <p>1.食材調理(洗切、備料、儲存、擺盤)</p>
+                        <p>2.廚房清理(刀具、餐具、器具、環境)</p>
+                        <p>3.從基層培育為店舖營運幹部 </p>
+                        <a href="" class="btn btn-warning">加入我們</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+    <script src="js/wow.min.js"></script>
+</body>
+
+</html>
