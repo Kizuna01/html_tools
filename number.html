@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數字特效</title>
+</head>
+
+<body>
+    <section id="s301" class="">
+        <div class="container-fluid">
+            <div class="row align-items-center ">
+                <div class="col-md-7 p-5 text-start">
+                    <h1 class=" text-success">數字特效</h1>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h4 style="font-weight: 800;">年均銷售</h4>
+                            <div class="counter1" style="font-weight: 800; display: inline-block;">1,123,456.78</div>/顆
+                        </div>
+                        <div class="col-md-3">
+                            <h4 style="font-weight: 800;">去年銷售</h4>
+                            <div class="counter2" style="font-weight: 800; display: inline-block;">1,123,456.78</div>/顆
+                        </div>
+                        <div class="col-md-3">
+                            <h4 style="font-weight: 800;">月均銷售</h4>
+                            <div class="counter3" style="font-weight: 800; display: inline-block;">1,123,456.78</div>/顆
+                        </div>
+                        <div class="col-md-3">
+                            <h4 style="font-weight: 800;">上月銷售</h4>
+                            <div class="counter4" style="font-weight: 800; display: inline-block;">1,123,456.78</div>/顆
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+    <script>
+        const counterUp = window.counterUp.default
+        const callback = entries => {
+            entries.forEach(entry => {
+                const el = entry.target
+                if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+                    counterUp(el, {
+                        duration: 2000,//秒數
+                        delay: 16,//數字跑動的間隔
+                    })
+                    el.classList.add('is-visible')
+                }
+            })
+        }
+
+        const IO = new IntersectionObserver(callback, { threshold: 1 })
+
+        const el_1 = document.querySelector('.counter1')//呼叫class
+        IO.observe(el_1)
+
+        const el_2 = document.querySelector('.counter2')
+        IO.observe(el_2)
+        
+        const el_3 = document.querySelector('.counter3')
+        IO.observe(el_3)
+        
+        const el_4 = document.querySelector('.counter4')
+        IO.observe(el_4)
+    </script>
+</body>
+</html>
