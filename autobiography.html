@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20號履歷練習</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+        body{
+            font-family:'Noto Sans TC' ,sans-serif;
+        }
+        .section01{
+            height: 100vh;  /*vh 跟隨視窗變化高度*/
+            background-color: sienna ; 
+            position: relative; /*位置:相對*/
+        }
+        .box01{
+
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            position: absolute; /*位置:絕對*/
+            top:0;   /*與上方距離0*/
+            left: 0; /*與左方距離0*/
+        }
+        .box02{
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            position: absolute;
+            top:0;
+            right:0;
+        }
+        .box03{
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .box04{
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            position: absolute;
+            bottom: 0;
+            right:0;
+        }
+        .userimg{
+            position: absolute;
+            top: 30px;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            background-image: url(img/bg3.png);
+            background-attachment: fixed;/*固定背景圖片*/
+        
+            
+          
+        }
+        .bg-cover{
+            background-size: cover;
+            background-position: center center;
+
+        }
+        .usertext{
+            position: absolute;
+            top: 50%;
+            left:50%;
+            transform: translate(-50%,-50%);/*只靠上面程式碼，無法完全置中，*/
+                                            /*需靠這個將x y軸各拉回50%*/
+            font-weight: 500;
+            text-align: center;
+            color:#fff;            
+            
+            /*a 透明度 1~0*/
+            /*background-color: rgba(0, 0,0 , 0.4);*/
+
+            background-image: linear-gradient(180deg,rgba(0, 0,0 , 0),rgba(0, 0,0 , 0.8));
+                    
+            /*線性漸層    (角度,顏色,顏色)*/
+            padding: 30px;
+        }
+        .usertext h1{
+            font-size: 50px;
+            margin-bottom: 0;/*拉近與線的距離*/
+        }
+        .usertext p{
+            margin-top: 0;
+            font-size:32px;
+        }
+        .section02{
+            
+            height: 380px;
+            margin-top: 30px;
+            position: relative;
+            font-size: 36px; /*讓作品集字體大小*/
+            font-weight: 900;
+            
+        }
+        .section02_box01{
+            height: 320px;
+            width: 320px;
+            position: absolute;
+            /*background-color: #000;*/
+            background-image: url(img/444.jpg);
+            border-radius: 50%;/*導圓角  可用px或%  一半剛好整個變圓*/
+            left: 10%;
+
+            /*讓作品集 置中*/
+            text-align: center;
+            line-height: 280px;
+        }
+        .section02_box01:hover{
+            background-image: url(img/bg4.jpg);
+        }
+        .section02_box01 a{
+            color: aqua; 
+            text-decoration: none;
+        }
+        .section02_box02{
+            height: 320px;
+            width: 320px;
+            position: absolute;
+            /*background-color: #000;*/
+            background-image: url(img/666.jpg);
+            border-radius: 50%;/*導圓角  可用px或%  一半剛好整個變圓*/
+            left: 45%;
+            font-size: 36px; /*讓作品集字體大小*/
+            font-weight: 900;
+
+            /*讓作品集 置中*/
+            text-align: center;
+            line-height: 280px;
+        }
+       
+        .section02_box02:hover{
+            background-image: url(img/bg4.jpg);
+        }
+        .section02_box03:hover{
+      
+            background-image: url(img/bg4.jpg);
+
+        }
+    
+ 
+        .section02_box02 a{
+            color: aqua; 
+            text-decoration: none;
+        }
+        .section02_box03{
+            height: 320px;
+            width: 320px;
+            position: absolute;
+            /*background-color: #000;*/
+            background-image: url(img/555.jpg);
+            border-radius: 50%;/*導圓角  可用px或%  一半剛好整個變圓*/
+            right: 10%;
+            
+            
+
+            /*讓作品集 置中*/
+            text-align: center;
+            line-height: 280px;
+        }
+        .section02_box03 a{
+            color: aqua; 
+            text-decoration: none;
+        }
+     
+        @media screen and (max-width:1000px){
+            .section02_box01{
+                position: absolute;
+                left: 10%;
+                
+            }
+            .section02_box02{
+                position: absolute;
+                left: 10%;
+                top:100%;
+            
+            }
+            .section02_box03{
+                position: absolute;
+                left: 10%;
+                top:200%;
+            }
+        }
+            
+        
+  
+
+    </style>
+</head>
+<body>
+        <div class="section01">
+        <div class="box01"></div>
+        <div class="box02"></div>
+        <div class="box03"></div>
+        <div class="box04"></div>
+        <div class="userimg bg-cover"></div>
+        <div class="usertext">
+            <h1>王阿醜</h1>
+            <hr>
+            <h2>了不起負責!</h2>
+            <p>複製一種傳來傢俱晚上反饋</p>
+        </div>
+    </div>
+
+    <div class="section02">
+       <div class="section02_box01 bg-cover">
+        <a href="#"><p>作品集1</p></a>
+       </div>
+       <div class="section02_box02 bg-cover">
+        <a href="#"><p>作品集2</p></a>
+       </div>
+       <div class="section02_box03 bg-cover">
+        <a href="#"><p>作品集3</p></a>
+       </div>  
+
+</div>
+
+</body>
+</html>
