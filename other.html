@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        .box{
+            height: 50px;
+            width: 50px;
+            display: inline-block;
+        }
+        .demo{
+            background-color: #000;
+        }
+        .box2{
+            height: 50px;
+            width: 50px;
+            display: inline-block;
+            background-color: #000;
+        }
+        .demo2{
+            width: 300px;
+            height: 250px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+
+
+        <h1>user-select-all</h1>
+        <div class="demo">
+            <p class="text-bg-danger user-select-all">女士一體只有屬性我現在作為某些，各項點。</p> <!--點擊即全選-->
+            <p class="text-bg-info user-select-auto">女士一體只有屬性我現在作為某些，各項點。</p><!--我不知道有甚麼差異哈哈-->
+            <p class="text-bg-info user-select-none">女士一體只有屬性我現在作為某些，各項點。</p><!--點擊，無法選取-->
+        </div>
+
+        <h1>overflow 溢位，跑版</h1>
+        <div class="demo">
+            <div class="box text-light">這是原始組這是原始組這是原始組</div>
+     
+
+            <div class="box text-light overflow-auto">這是改變組這是改變組這是改變組</div>
+            <div class="box text-light overflow-hidden">這是改變組這是改變組這是改變組</div>
+    
+            <div class="box text-light overflow-scroll">這是改變組這是改變組這是改變組</div>
+            <div class="box text-light overflow-visible">這是改變組這是改變組這是改變組</div>
+            
+        </div>
+
+      
+        <h1>手機板橫向滑動選單</h1>
+        <div class="demo"><!--flex-nowrap排版不換行   text-norap 字不換行  list-unstyled 去掉選單的前墜-->
+            <ul class="list-unstyled d-flex justify-content-between flex-nowrap overflow-scroll">
+                <li class="text-nowrap p-3 bg-info me-1">選單01-功能111222</li>
+                <li class="text-nowrap p-3 bg-info me-1">選單02-功能111222</li>
+                <li class="text-nowrap p-3 bg-info me-1">選單03-功能111222</li>
+                <li class="text-nowrap p-3 bg-info me-1">選單04-功能111222</li>
+                <li class="text-nowrap p-3 bg-info me-1">選單05-功能111222</li>
+            </ul>
+        </div>
+
+  
+       
+    
+       
+
+   
+        <h1>shadow 陰影大小 sm lg... </h1>
+        <div class="demo2 bg-light">
+            <div class="shadow">軟體風雲性質，附近接觸手指，。</div>
+            <hr>
+            <div class="shadow-sm">軟，說到難以阿。</div>
+            <hr>
+            <div class="shadow-lg">軟體風雲性質，附近到難以，阿。</div>
+            <hr>
+            <div style="box-shadow: 2px 2px 2px 2px aqua;">自訂陰影</div>
+        </div>
+
+        <h1>sizing 尺寸</h1>
+        <div class="demo">
+            <div class="border p-3 mt-3 text-light w-25">w-25:width:25%</div>
+            <div class="border p-3 mt-3 text-light w-50">w-25:width:50%</div>
+            <div class="border p-3 mt-3 text-light w-75">w-25:width:75%</div>
+            <div class="border p-3 mt-3 text-light w-100">w-25:width:100%</div>
+        </div>
+        <div class="demo d-flex vh-100" >
+            <div class="border p-3 ms-1 text-light h-25">h-25:height:25%</div>
+            <div class="border p-3 ms-1 text-light h-50">h-50:height:50%</div>
+            <div class="border p-3 ms-1 text-light h-75">h-75:height:75%</div>
+            <div class="border p-3 ms-1 text-light h-100">h-100:height:100%</div>
+        
+        </div>
+       
+    
+        <h1>隱藏(invisible)，出現 </h1>
+        <div class="demo">
+            <div class="box bg-warning invisible"></div><!--invisible位置仍然會佔著，只是看不到-->
+            <div class="box bg-warning "></div>
+            <div class="box bg-warning "></div>
+        </div>
+        <h1>紅綠燈</h1>
+        <div class="bg-dark d-flex justify-content-between rounded-5" style="width: 250px; height: 100px;">
+            <div class="box bg-danger rounded-circle mt-3 ms-3" style="width: 70px ;height: 70px;" id="red"></div>
+            <div class="box bg-warning rounded-circle mt-3" style="width: 70px ;height: 70px;" id="yellow"></div>
+            <div class="box bg-success rounded-circle mt-3 me-3" style="width: 70px ;height: 70px;" id="green"></div>
+        </div>
+        
+      
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        $(function(){
+            let cnt=0;
+            setInterval(function(){
+                
+                if(cnt==0){
+                    setRed();
+                    cnt+=1;
+                }
+                else if(cnt==1){
+                    setYellow();
+                    cnt+=1;
+                }
+                else if(cnt==2){
+                    setGreen();
+                    cnt=0;
+                }
+                
+                
+            },1000);
+
+         
+        });
+        function setRed(){
+            $("#red").removeClass("invisible");
+            $("#green").addClass("invisible");
+            $("#yellow").addClass("invisible");
+        }
+        function setYellow(){
+            $("#yellow").removeClass("invisible");
+            $("#green").addClass("invisible");
+            $("#red").addClass("invisible");
+        }
+        function setGreen(){
+            $("#green").removeClass("invisible");
+            $("#yellow").addClass("invisible");
+            $("#red").addClass("invisible");
+        }
+    </script>
+</body>
+</html>
