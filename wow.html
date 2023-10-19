@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特效</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!--載入animate-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="container">
+        <!--透過class設定特效
+          data-wow-duration="1s" 間隔時間 
+          data-wow-delay="0s"    延遲時間
+          data-wow-iteration 重複次數，infinite為無限-->
+       
+        <h1 class="wow animate__bounceInLeft" data-wow-duration="1s" data-wow-delay="1s">左進</h1>
+        <h1 class="wow animate__bounceInRight" data-wow-duration="1s" data-wow-delay="1s">右進</h1>
+        
+        <h1 class="wow animate__flipInX" data-wow-duration="1s" data-wow-delay="2s">翻轉</h1>
+        <img src="img/steak.jpg"  style="height:100px ;width:200px"
+         class="img-fluid wow animate__flipInX" data-wow-duration="1s" data-wow-delay="2s">
+        
+         <div class="col-6 text-center">
+            <i class="bi bi-heart-fill wow animate__fadeInRight fa-8x text-danger"  
+            data-wow-duration="1s" data-wow-delay="0s" data-wow-iteration="infinite"></i>
+        </div>
+    </div>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-3.7.0.min.js"></script>
+<script src="js/jquery-3.7.0.min.js"></script>
+
+<!--載入wow.min.js-->
+<script src="js/wow.min.js"></script>
+<script>
+    // wow初始化
+    new WOW().init();
+</script>
+</body>
+</html>
