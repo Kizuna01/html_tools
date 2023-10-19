@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss.css">
+    <title>Document</title>
+    <style>
+        @media screen and (max-width:768px) {
+            thead{
+                display: none;
+            }
+            .table-rwd tbody tr{
+                display: block;
+                border: 2px solid black;
+                margin-top: 2px;
+            }
+            .table-rwd tbody td{
+                display: block;
+                font-size: 16px;
+                overflow: hidden;
+            }
+            .table-rwd tbody td:before{
+                content:attr(data-th)":";
+                color: black;
+                float: left;
+                width: 30%;
+                height: 100%;
+                text-align: right;
+                padding-right: 1em;
+                font-size: 16px;
+                font-weight: 900;
+            }
+            .table-rwd tbody tr td span.table-col{
+                display: block;
+                float: left;
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 名稱
+    地址
+    主人的話 
+    刷卡True_False
+    景點縣市
+    圖片 -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-rwd">
+                    <thead class="table-dark ">
+                        <tr>
+                            <th width="30%">圖片</th>
+                            <th width="15%">名稱</th>
+                            <th width="20%">地址</th>
+                            <th width="20%">主人的話</th>
+                            <th width="5%">刷卡True_False</th>
+                            <th width="10%">景點縣市</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mydata">
+                          <tr class="table-danger">
+                            <td data-th="圖片">
+                                <span class="table-col">
+                                <img src="https://ezgo.coa.gov.tw/Uploads/opendata/TainmaMain01/APPLY_D/20151007173924.jpg" class="img-fluid">
+                                </span>
+                            </td>
+                            <td data-th="名稱"><span class="table-col">湖莓宴餐坊</span></td>
+                            <td data-th="地址"><span class="table-col">苗栗縣大湖鄉富興村八寮彎2-7號4樓</span></td>
+                            <td data-th="主人的話"><span class="table-col ">湖苺宴開在大湖酒莊的4樓，是大湖地區農會經營的田媽媽餐坊，但是不同於一般田園風格的田媽媽主題餐廳，主打草莓創意料理的湖苺宴，裝潢、菜色都充滿年輕想法，一群六年級中段班的田媽媽，把她們對草莓的奇思異想，充份發揮在料理上。\r\n餐廳所供的菜色會依季節不同做更換，皆以套餐為主，在草莓產季菜單有德國烤豬腳酌草莓醋酸菜、草莓魚排酌草莓酸辣醬等，另外，這裡的意大利麵可是別處吃不到的哦！因為田媽媽們在麵條中加入了草莓，遊客吃了會有驚豔之感哦！\r\n若是水梨產季，則推出水梨風味套餐，其中「水梨磨菇里肌肉餐」餐點以新鮮的水梨加上鮮嫩多汁的里肌肉以燴飯的方式呈現，讓您吃到水果的鮮甜及富有彈性的里肌肉，多層次的口感保證讓您回味無窮。
+                            </span></td>
+                            <td data-th="刷卡True_False"><span class="table-col">True</span></td>
+                            <td data-th="景點縣市"><span class="table-col">苗栗縣</span></td>
+                        </tr>   
+                  
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        $(function(){
+            $.ajax({
+                type:"get",
+                url:"https://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx",
+                success:showdata,
+                error:function(){
+                    alert('串接失敗');
+                }
+                
+                //console.log("串接失敗-https://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx")
+                    
+
+            })
+        });
+        function showdata(data){
+            $('#mydata').empty(); //先清空，再跑迴圈，就可以保留原本寫的html
+            for(var i=0;i<data.length;i++){
+                var photo='<td data-th="圖片"><span class="table-col"><img src="'+data[i]['PicURL']+'" class="img-fluid"></span></td>';
+                var name='<td data-th="名稱"><span class="table-col">'+ data[i]['Name']+'</span></td>';
+                var addres='<td data-th="地址"><span class="table-col">'+ data[i]['Address']+'</span></td>';
+                                                                                            //substring(位置,字數)
+                var talk='<td data-th="主人的話"><span class="table-col">'+data[i]['HostWords'].substring(0,50) +'</span></td>';
+                
+              
+                var card =data[i]['CreditCard']=='True'? '是':'否';
+                 card='<td data-th="刷卡True_False"><span class="table-col">'+card+'</span></td>';
+
+                var city='<td data-th="景點縣市"><span class="table-col">'+data[i]['City']+'</span></td>';
+                
+                if (data[i]['CreditCard'] =='True')
+                {
+                    $('#mydata').append('<tr class="table-danger">'+photo+name+addres+talk+card+city+'</tr>');
+                }
+                else{
+                    $('#mydata').append('<tr >'+photo+name+addres+talk+card+city+'</tr>');
+                }
+            };
+            
+        }
+    </script>
+</body>
+</html>
