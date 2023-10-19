@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/mycss.css" rel="stylesheet">
+    <title>透過響應式實現中斷點</title>
+    <style>
+        @media screen and ( max-width:768px ){
+            .header{
+                background-image:url(img/222.jpg);
+            }  
+        }
+        @media screen and ( min-width:769px ) and ( max-width:992px ){
+            .header{
+                background-image:url(img/333.jpg);
+            }  
+        }
+        @media screen and ( min-width:993px ) and ( max-width:1200px ){
+            .header{
+                background-image:url(img/444.jpg);
+            }  
+        }
+        @media screen and ( min-width:1201px ) and ( max-width:1400px ){
+            .header{
+                background-image:url(img/555.jpg);
+            }  
+        }
+        @media screen and ( min-width:1401px ) {
+            .header{
+                background-image:url(img/666.jpg);
+            }  
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <table class="table text-bg-dark  table-bordered border-light">
+        <tr >
+            <td>sm</td>
+            <td>md</td>
+            <td>lg</td>
+            <td>xl</td>
+            <td>xxl</td>
+        </tr>
+        <tr>
+            <td>手機</td>
+            <td>平板</td>
+            <td>平板橫放</td>
+            <td>筆電</td>
+            <td>桌機</td>
+        </tr>
+        <tr>
+            <td>576</td>
+            <td>768</td>
+            <td>992</td>
+            <td>1200</td>
+            <td>1400</td>
+        </tr>
+    </table>
+    </div>
+    <div class="box0 display-3 fw-900">透過響應式實現中斷點</div> 
+    <!--1.讓第一張圖以外全部消失，
+        2.指定好每個圖出現的大小 由小到大
+        3.第二張圖出現時，第一張要消失
+          第三張圖出現時，第二張要消失，以此類推-->
+    <div class="header bg-cover bg-center " style="height: 280px;"></div>
+    
+   <!-- <div class="bg-cover bg-center d-none d-md-block d-lg-none" style="background-image:url(/img/222.jpg); height:200px"></div>
+    <div class="bg-cover bg-center d-none d-lg-block d-xl-none" style="background-image:url(/img/666.jpg); height:200px"></div>
+    <div class="bg-cover bg-center d-none d-xl-block d-xxl-none" style="background-image:url(/img/bg1.jpg); height:200px"></div>
+    <div class="bg-cover bg-center d-none d-xxl-block" style="background-image:url(/img/bg2.jpg); height:200px"></div>-->
+
+
+    <script src="js/bootstrap.bundle.min.js"> </script>
+</body>
+</html>
