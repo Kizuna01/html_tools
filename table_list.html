@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/mycss.css" rel="stylesheet">
+    <title>表格</title>
+    <style>
+        @media screen and ( max-width: 768px){
+            /*讓thead消失*/
+            .table-rwd thead{  
+                display: none;
+            }
+            /*tr td 設block  block的排列是由上往下的*/
+            .table-rwd tbody tr{ 
+                display: block;
+                border: 2px solid #000;
+                margin: 10px 0;
+            }
+            .table-rwd tbody tr td{
+                display: block;
+                font-size: 24px;
+                font-weight: 600;
+                overflow: hidden;
+               /*解決溢位(跑版)問題  通常發生在 tr td span*/
+            }
+            .table-rwd tbody tr td:before{
+                content: attr(data-th)":";
+                color: var(--mycolor8);
+                display: block;
+                float: left;
+                width: 6em;
+                text-align: right;
+                padding-right: 1em;
+            }
+            .table-rwd tbody tr td span.table-col{
+                display: block;
+                float: left;
+                width: calc(100% - 6em);
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table class="table  table-bordered table-hover table-sm border-warning table-rwd">                      
+                                            <!--table-->
+                                           <!--table-striped 奇偶數列不同底色-->
+                                           <!--table-bordered 框線--> 
+                                           <!--border-warning 框線顏色-->
+                                           <!--table-borderless 無框線-->
+                                           <!--table-hover-->
+                                           <!--table-sm-->
+            <thead class="text-bg-dark">
+                <tr >
+                    <th>編號</th>
+                    <th>產品名稱</th>
+                    <th>產品數量</th>
+                    <th>產品價格</th>
+                    <th>產品說明</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr class="bg-active"> <!--bg-active-->
+                    <td data-th="編號"><span class="table-col">1</span></td>  <!--data-th 藏值-->       <!--table-active 透明款 僅在table中可使用-->
+                    <td data-th="產品名稱"><span class="table-col">紅茶</span></td>
+                    <td data-th="產品名稱"><span class="table-col">100</span></td>
+                    <td data-th="產品價格"><span class="table-col">$19</span></td>
+                    <td data-th="產品說明"><span class="table-col">那個充分下了，市政府均為買賣引導自從模樣字幕花蓮祝福，戀愛建材除了的是每日警告痛苦，協議讀者，錯誤規定依然絶不哥哥內地應該幻想幹什麼，我有我會戰鬥職責職業，作品究竟影響優秀收費不禁不見男女已有也要上路一致，國產德國就在說著受到平台專業當我你自己戰爭邀請忽。</span></td>
+                </tr>
+                <tr class="text-bg-danger">
+                    <td>2</td>
+                    <td>綠茶</td>
+                    <td>100</td>
+                    <td>$19</td>
+                    <td>default</td>
+                </tr>
+                <tr class="text-bg-info">
+                    <td>3</td>
+                    <td>冬瓜茶</td>
+                    <td>100</td>
+                    <td>$19</td>
+                    <td>secondary</td>
+                </tr>
+                <tr class="bg-success">
+                    <td>4</td>
+                    <td>清茶</td>
+                    <td>100</td>
+                    <td>$19</td>
+                    <td>success</td>
+                </tr>
+                <tr class="text-bg-danger">
+                    <td>5</td>
+                    <td>黑咖啡</td>
+                    <td>100</td>
+                    <td>$19</td>
+                    <td>danger</td>
+                </tr>
+                <tr class="text-bg-warning">
+                    <td>6</td>
+                    <td>拿鐵</td>
+                    <td>100</td>
+                    <td>$19</td>
+                    <td>warning</td>
+                </tr>
+                <tr class="bg-info">
+                    <td>7</td>
+                    <td>歐蕾</td>
+                    <td>100</td>
+                    <td>$19</td>
+                    <td>info</td>
+                </tr>
+                <tr class="bg-light">
+                    <td>8</td>
+                    <td>珍珠奶茶</td>
+                    <td>100</td>
+                    <td>$19</td>
+                    <td>light</td>
+                </tr>
+                <tr class="text-bg-dark " >
+                    <td >9</td>
+                    <td >橙汁汗</td>
+                    <td >100</td>
+                    <td >$87</td>
+                    <td >dark</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"> </script>
+</body>
+</html>
