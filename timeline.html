@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss.css">
+    <title>時間軸排版</title>
+    <style>
+        .myimg{
+            height: 220px;
+    
+        }
+        .mytext{
+            height: 220px;
+
+        }
+        .timeline-section{
+            position: relative;
+        }
+        .timeline-section:before{
+            position: absolute;
+            content:"";
+            top:0;
+            bottom: 0;
+            width: 2px;
+            /* background-color: black; */
+            background-image: linear-gradient(180deg,rgba(0,0,0,0.1),rgba(0,0,0,0.8));
+            left: 50%;
+            transform: translateX(50%);
+        }
+        .timeline-section-point{
+            position: relative;
+        }
+        .timeline-section-point:before{
+            position: absolute;/*因為有justify-content-center，可以不用另外調到中間，就已在中間*/
+            content:"";
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: white;/*中空圓形，其實就是框線很粗的，白色底*/
+            border: 5px solid brown;
+        }
+        .timeline-section-point:hover:before{
+
+            border: 5px solid black;
+        }
+        @media screen and (max-width:768px) {
+            .timeline-section-point:before,.timeline-section:before{
+                display: none;/*手機板時，消失掉時間軸*/
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="timeline-section ">
+            <div class="row justify-content-center flex-row-reverse timeline-section-point">
+                <div class="col-md-5">
+                    <div class="myimg bg-center bg-cover" style="background-image: url(img/lake.jpg);"></div>
+                </div>
+                <div class="col-md-5 mt-3">
+                    <h1>這是標題</h1>
+                    <p class="mytext">排名一句公佈透明精英是我網際網路，信箱您是聯絡人走到，有着買了適當宣傳能學到您的風格本文，也沒市場然而現實一切只好超級然後來的一把感受新型我只，筆者熱線團結，地面一步綜合聯絡人操作鄉民們重大老婆雲林帶來輸入網通法律責任，行情我家裡面你還予以，都會找到，感。</p>
+                </div>
+            </div>
+            <div class="row justify-content-center timeline-section-point">
+                <div class="col-md-5 ">
+                    <div class="myimg bg-center bg-cover" style="background-image: url(img/lake.jpg);"></div>
+                </div>
+                <div class="col-md-5 mt-3">
+                    <h1>這是標題</h1>
+                    <p class="mytext">排名一句公佈透明精英是我網際網路，信箱您是聯絡人走到，有着買了適當宣傳能學到您的風格本文，也沒市場然而現實一切只好超級然後來的一把感受新型我只，筆者熱線團結，地面一步綜合聯絡人操作鄉民們重大老婆雲林帶來輸入網通法律責任，行情我家裡面你還予以，都會找到，感。</p>
+                </div>
+            </div>
+            <div class="row justify-content-center flex-row-reverse timeline-section-point">
+            <div class="col-md-5 ">
+                <div class="myimg bg-center bg-cover" style="background-image: url(img/lake.jpg);"></div>
+            </div>
+            <div class="col-md-5 mt-3">
+                <h1>這是標題</h1>
+                <p class="mytext">排名一句公佈透明精英是我網際網路，信箱您是聯絡人走到，有着買了適當宣傳能學到您的風格本文，也沒市場然而現實一切只好超級然後來的一把感受新型我只，筆者熱線團結，地面一步綜合聯絡人操作鄉民們重大老婆雲林帶來輸入網通法律責任，行情我家裡面你還予以，都會找到，感。</p>
+            </div>
+            </div>
+            <div class="row justify-content-center timeline-section-point">
+            <div class="col-md-5">
+                <div class="myimg bg-center bg-cover" style="background-image: url(img/lake.jpg);"></div>
+            </div>
+            <div class="col-md-5 mt-3">
+                <h1>這是標題</h1>
+                <p class="mytext">排名一句公佈透明精英是我網際網路，信箱您是聯絡人走到，有着買了適當宣傳能學到您的風格本文，也沒市場然而現實一切只好超級然後來的一把感受新型我只，筆者熱線團結，地面一步綜合聯絡人操作鄉民們重大老婆雲林帶來輸入網通法律責任，行情我家裡面你還予以，都會找到，感。</p>
+            </div>
+            </div>
+        </div>  
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
