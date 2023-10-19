@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/mycss.css" rel="stylesheet">
+    <title>Gutter</title>
+    <style>
+    </style>
+</head>
+
+<body>
+
+<div class=" display-3 fw-900">Gutter </div>
+    <div class="box03">
+        <h2>gx 欄之間左右推開</h2><!--gx x軸， gy y軸  g xy軸一起   -->
+                                <!--g-sm-5 中斷點  g0~5 預設0 -->
+        <div class="container px-4 ">
+            <div class="row gx">
+              <div class="col">
+               <div class="p-3 border bg-light">原始</div>
+              </div>
+              <div class="col">
+                <div class="p-3 border bg-light">原始</div>
+              </div>
+            </div>
+          </div>
+          <p> </p>
+          <div class="container px-4">
+            <div class="row gx-5">
+              <div class="col">
+               <div class="p-3 border bg-light">Custom column padding</div>
+              </div>
+              <div class="col">
+                <div class="p-3 border bg-light">Custom column padding</div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <h2>gy 欄之間上下推開</h2>
+    <div class="box03">
+        <div class="container overflow-hidden "><!--.overflow-hidden 包圍 .row 解決溢位問題--->
+            <div class="row gy">
+              <div class="col-6">
+                <div class="p-3 border bg-light">原始</div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 border bg-light">原始</div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 border bg-light">原始</div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 border bg-light">原始</div>
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="container overflow-hidden">
+            <div class="row gy-5">
+              <div class="col-6">
+                <div class="p-3 border bg-light">Custom column padding</div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 border bg-light">Custom column padding</div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 border bg-light">Custom column padding</div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 border bg-light">Custom column padding</div>
+              </div>
+            </div>
+          </div>
+    </div>
+              <div class=" display-3 fw-900">Gutter 巢狀(gx-5)</div>
+      
+              <div class="row">
+                  <div class="col-md-6"><div class="box01"></div></div>
+                  <div class="col-md-6">
+                      <div class="row gx">
+                          <div class="col-md-4">
+                              <div class="box01"></div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="box01"></div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="box01"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+             <hr>
+              <div class="row">
+                  <div class="col-md-6"><div class="box01"></div></div>
+                  <div class="col-md-6">
+                      <div class="row gx-5">
+                          <div class="col-md-4">
+                              <div class="box01"></div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="box01"></div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="box01"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+   
+
+    
+            
+                
+     
+        
+        </div>
+    </div>
+    </div>
+   
+
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"> </script>
+</body>
+
+</html>
