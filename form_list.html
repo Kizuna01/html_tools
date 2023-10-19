@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <Style>
+        .box {
+            height: 50px;
+            width: 50px;
+            display: inline-block;
+        }
+
+        .demo {
+            background-color: aquamarine;
+        }
+
+        .box2 {
+            height: 50px;
+            width: 50px;
+            display: inline-block;
+            background-color: #000;
+        }
+
+        .demo2 {
+            width: 300px;
+            height: 250px;
+            border: 1px solid #000;
+        }
+    </Style>
+</head>
+
+<body >
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <h1>基本表單</h1>
+                    <div class="demo">
+                      <form action="">
+                        <div class="mb-3">
+                            <label for="username" clas="form-label">帳號</label>
+                            <input type="text" id="username" name="username" class="form-control" placeholder="1~5個字">
+                            <div class="form-text" id="error_username">不會記錄任何資訊!</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" clas="form-label">密碼</label>
+                            <input type="password" id="password" name="password" class="form-control" placeholder="8~12個字">
+                            <div class="form-text" id="error_password">不會記錄任何資訊!</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">e-mail</label>
+                            <input type="text" id="mail" name="mail" class="form-control" placeholder="超過10個字">
+                            <div class="form-text" id="error_mail">不會記錄任何資訊!</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">地址</label>
+                            <input type="text" id="address" name="address" class="form-control" placeholder="不得空白">
+                            <div class="form-text" id="error_address"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">主餐</label>
+                            <input type="text"  list="food" name="food" class="form-control" id="showfood">
+                            <datalist id="food">
+                                <option value="漢堡"></option>
+                                <option value="牛排"></option>
+                                <option value="壽司"></option>
+                            </datalist>
+                        </div>
+                        <div class="mb-3">
+                            <label for="drink" clas="form-label">飲料</label>
+                            <select name="drink" id="drink" class="form-select">
+                                <option value="紅茶">紅茶</option>
+                                <option value="綠茶">綠茶</option>
+                                <option value="冬瓜茶">冬瓜茶</option>
+                            </select>
+                        </div>
+                        <button type="button"class="btn btn-primary" id="ok_btn">按鈕</button>
+                        <button type="submit" class="btn btn-primary  mx-3">送出</button>
+                        <div id="showmsg"></div>
+                    </div>
+                </form>
+                   
+        
+                
+            </div>
+        </div>
+        <div class="col-12">
+            <h1>橫向表單</h1>
+            <div class="demo">
+                <div class="row">
+                    <div class="col-auto">
+                        <label  class="form-label">帳號</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="text" id="username" name="username" class="form-control">
+                    </div>
+                    <div class="col-auto" class="form-text">不會紀錄任何資訊</div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-auto">
+                        <label  class="form-label">密碼</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="password" id="password" name="password" class="form-control">
+                    </div>
+                    <div class="col-auto" class="form-text">不會紀錄任何資訊</div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-auto">
+                        <button class="btn btn-primary ">按鈕</button>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary  mx-3">送出</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8">
+                <h1>input</h1>
+                <div class="demo">
+                    <input type="text"  class="form-control form-control-lg mb-2" placeholder="form-control-lg">
+                    <input type="text"  class="form-control mb-2" placeholder="form-control">
+                    <input type="text"  class="form-control form-control-sm mb-2" placeholder="form-control-sm">
+                </div>
+            </div>
+
+            <div class="col-8">
+                <h1>input檔案</h1>
+                <div class="demo">
+                    <div class="mb-3">
+                        <label  class="form-label">選取檔案(單選)</label>
+                        <input type="file" name="" id="" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label  class="form-label">選取檔案(多個)</label>
+                        <input type="file" name="" id="" class="form-control" multiple>
+                    </div>
+                    <div class="mb-3">
+                        <label  class="form-label">選取檔案(反灰禁止選取)</label>
+                        <input type="file" name="" id="" class="form-control" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label  class="form-label">選取檔案(lg)</label>
+                        <input type="file" name="" id="" class="form-control form-control-lg" >
+                    </div>
+                    <div class="mb-3">
+                        <label  class="form-label">選取檔案(sm)</label>
+                        <input type="file" name="" id="" class="form-control form-control-sm">
+                    </div>
+
+                </div>
+                <div class="col-8">
+                    <h1>input 建議選項</h1>
+                    <div class="demo">
+                        <label  class="form-control">餐點</label>
+                        <input type="text" class="form-control" list="myfood" placeholder="要吃啥呢">
+                        <datalist id="myfood">
+                            <option value="牛肉麵">
+                            <option value="漢堡"></option><!--有無</option>都可以-->
+                            <option value="豬排"></option>
+                        </datalist>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <h1>下拉選單</h1>
+                    <div class="demo">
+                        <label class="form-label" for="edu">學歷</label>
+                        <select class="form-select" name="edu" id="edu">
+                            <option value="大學(專)">大學(專)</option>
+                            <option value="高中職">高中職</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </div>
+                    <div class="demo">
+                        <label class="form-label" for="edu">學歷</label>                      
+                                                                <!--multiple 卷軸式-->
+                                                                <!--multiple size="大小"-->
+                        <select class="form-select" name="edu" id="edu" multiple size="5">
+                            <option value="碩士">碩士</option>
+                            <option value="大學(專)">大學(專)</option>
+                            <option value="高中職">高中職</option>
+                            <option value="小學">小學</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </div>
+                    <div class="demo">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="" name="" value="閱讀">
+                            <label for="" class="form-check-label">閱讀</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="" name="" value="運動">
+                            <label for="" class="form-check-label">運動</label>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="demo">
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="" name="interest" value="閱讀">
+                            <label for="" class="form-check-label">閱讀</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="" name="interest" value="運動">
+                            <label for="" class="form-check-label">運動</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="" name="interest" value="運動">
+                            <label for="" class="form-check-label">睡覺</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="" name="interest" value="運動">
+                            <label for="" class="form-check-label">吃飯</label>
+                        </div>
+                        <button class="btn btn-primary" id="checkbox_btn">送出</button>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <h1>radio</h1> <!--name取一樣，則會歸類為一組，進而只能單選-->
+                    <div class="demo">
+                        <div class="mb-3 form-check">
+                            <input type="radio" class="form-check-input" id="interest01" name="interest01" value="閱讀">
+                            <label for="" class="form-check-label">閱讀</label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="radio" class="form-check-input" id="interest01" name="interest01" value="運動">
+                            <label for="" class="form-check-label">運動</label>
+                        </div>
+                        <button class="btn btn-primary" id="radio_btn">送出</button>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <h1>switch</h1>
+                    <div class="demo ">
+                        <div class="mb-3 form-check form-switch">
+                            <input type="checkbox" class="form-check-input" role="switch" id="switch01" name="switch01">
+                            <label for="switch01" class="form-check-label">藍芽</label>
+                        </div>    
+                        <div class="mb-3 form-check form-switch">
+                            <input type="checkbox" class="form-check-input" role="switch" id="switch02" name="switch02"checked>
+                            <label for="switch02" class="form-check-label">開關燈</label>
+                        </div>
+                        <div class="mb-3 form-check form-switch">
+                            <input type="checkbox" class="form-check-input" role="switch" disabled>
+                            <label for="" class="form-check-label">藍芽</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <h1>switch</h1>
+                    <div class="demo ">
+                        <div class="mb-3 form-check form-switch form-check-inline">
+                            <input type="checkbox" class="form-check-input" role="switch">
+                            <label for="" class="form-check-label">藍芽</label>
+                        </div>    
+                        <div class="mb-3 form-check form-switch form-check-inline">
+                            <input type="checkbox" class="form-check-input" role="switch" checked>
+                            <label for="" class="form-check-label">藍芽</label>
+                        </div>
+                        <div class="mb-3 form-check form-switch form-check-inline">
+                            <input type="checkbox" class="form-check-input" role="switch" disabled>
+                            <label for="" class="form-check-label">藍芽</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <h1>range</h1>
+                    <div class="demo">
+                        <div class="mb-3">
+                            <label for="range01" class="form-label" id="num">數值:100</label>
+                            <input type="range" class="form-range" min="0" max="100" step="1" id="range01" name="range01" value="100">
+                        </div>
+                    </div>
+
+                    <div class="demo">
+                        <div class="mb-3">
+                            <label for="range02" class="form-label" id="num02">數值</label>
+                            <input type="range" class="form-range" min="0" max="100" step="1" id="range02" name="range02">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <h1>input group</h1>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1">@</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <span class="input-group-text" id="basic-addon2">@example.com</span>
+                        </div>
+                      </div>  
+                    </div>
+                </div>
+                <div class="col-8">
+                    <h1>floating label</h1>
+                    <div class="mb-3 form-floating">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="輸入帳號">
+                        <label for="username">帳號</label>
+                    </div>
+                </div>
+
+                <div class="col-8">
+                    <h1>表單驗證</h1>
+                    <div class="demo">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="username02" class="form-label ">帳號</label>
+                                <input type="text" class="form-control is-valid">
+                                <div class="valid-feedback">輸入正確</div>
+                                <div class="invalid-feedback">輸入錯誤</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="nickname" class="form-label ">暱稱</label>
+                                <input type="text" class="form-control is-invalid">
+                                <div class="valid-feedback">輸入正確</div>
+                                <div class="invalid-feedback">輸入錯誤</div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input is-invalid">
+                                    <label for="" class="form-check-label">同意遵守條款</label>
+                                    <div class="valid-feedback">同意遵守條款</div>
+                                    <div class="invalid-feedback">必須同意遵守條款，才可加入會員</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        $(function(){
+            let flag_username=false;
+            let flag_password=false;
+            let flag_mail=false;
+            let flag_address=false;
+            $("#ok_btn").click(function(){
+                console.log($('#username').val());
+
+               if(flag_username && flag_password && flag_mail &&flag_address)
+               {
+                $('#showmsg').html("帳號:"+$('#username').val()+"<br>密碼:"+$('#password').val()+"<br>e-mail:"+$("#mail").val()+"<br>地址:"+$('#address').val()+"<br>餐點:"+$('#showfood').val()+"<br>飲品:"+$('#drink').val());
+               }
+               else
+               {
+                alert("有錯");
+               }
+                
+                
+                
+               
+            });
+            //即時監聽  input propertychange 一有動作就監聽 
+            $("#username").bind("input propertychange",function(){
+                console.log($(this).val().length);
+                if ($(this).val().length <6 && $(this).val().length>0)
+                {
+                    $("#error_username").html("符合規則");
+                    //$("#error_username").css("color","green");
+                    $("#error_username").addClass("text-success");
+                    $("#error_username").removeClass("text-danger");
+                    flag_username=true;
+                }
+                else
+                {
+                    $("#error_username").html("不可超過5個字");
+                    //$("#error_username").css("color","red");
+                    $("#error_username").addClass("text-danger");
+                    $("#error_username").removeClass("text-success");
+                    flag_username=false;
+                }
+                
+            });
+            $("#password").bind("input propertychange",function(){
+                if ($(this).val().length<13 && $(this).val().length>7)
+                {
+                    $("#error_password").addClass("text-success");
+                    $("#error_password").removeClass("text-danger");
+                    $("#error_password").html("符合規則");
+                    flag_password=true;
+                }
+                else
+                {
+                    $("#error_password").addClass("text-danger");
+                    $("#error_password").removeClass("text-success");
+                    $("#error_password").html("不符合規則");
+                    flag_password=false;
+                }
+            });
+            $("#mail").bind("input propertychange",function(){
+                
+                if($(this).val().length<11)
+                {
+                    $("#error_mail").html("不符合規則");
+                    $("#error_mail").addClass("text-danger");
+                    $("#error_mail").removeClass("text-success");
+                    flag_mail=false;
+                }
+                else
+                {
+                    $("#error_mail").html("符合規則");
+                    $("#error_mail").removeClass("text-danger");
+                    $("#error_mail").addClass("text-success");
+                    flag_mail=true;
+                }
+            });
+            $("#address").bind("input propertychange",function(){
+                if($(this).val().length>0)
+                {
+                    $("#error_address").html("符合規則");
+                    $("#error_address").addClass("text-success");
+                    $("#error_address").removeClass("text-danger");
+                    flag_address=true;
+                }
+                else
+                {
+                    $("#error_address").html("不符合規則");
+                    $("#error_address").addClass("text-danger");
+                    $("#error_address").removeClass("text-success");
+                    flag_address=false;
+                }
+            });
+
+            $("#checkbox_btn").click(function(){
+                var myinterest=[];//空陣列
+               // 掃描為input且name是interest的 如果為打勾狀態，則執行逗號右邊的程式碼
+                $.each($("input[name='interest']:checked"),function(){
+                    myinterest.push($(this).val());//將其值加入陣列
+                })
+                console.log(myinterest);
+                console.log(myinterest.join(","));//陣列轉字串，以,做間隔
+            });
+            
+            $("#radio_btn").click(function(){
+           
+                $.each($("input[name='interest01']:checked"),function(){
+                    var interest=$(this).val();
+                    console.log(interest);
+                    
+                })
+              
+
+            });
+            
+            $("#switch01").change(function(){
+
+                console.log($(this).val());
+                if($(this).is(':checked'))
+                {
+                    console.log("on");
+                    $(this).next().text("on");// .next()下一個標籤 .text()純寫文字
+                }
+                else
+                {
+                    console.log("off");
+                    $(this).next().text("off");
+                }
+            });
+            $("#switch02").change(function(){
+                if($(this).is(':checked'))
+                {
+                    $("body").addClass("bg-dark");//body可以直接呼叫，不用取id
+                    //css寫法
+                    //$("body").css("background-color","black");
+                    $(this).next().text("關燈");
+                }   
+                else
+                {
+                    $("body").removeClass("bg-dark");
+                    //css寫法
+                    //$("body").css("background-color","white");
+                    $(this).next().text("開燈");
+                }
+            });
+            //change監聽，須等放開滑鼠才會變化  
+            $("#range01").change(function(){
+
+                console.log($(this).val());
+                $("#num").text("數值: "+$(this).val());
+
+            });
+            //propertychang監聽， 滑動就會變化
+            $("#range02").bind("input propertychang",function(){
+                $("#num02").text("數值: "+$(this).val());
+            });
+
+         });
+    </script>
+</body>
+
+</html>
